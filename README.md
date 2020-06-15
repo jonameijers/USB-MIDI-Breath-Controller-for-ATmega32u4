@@ -58,7 +58,7 @@ and write this before "exit0", then save it:\
 
 add this line before the exit statement:
 
-`sudo python [PATH TO THE SCRIPT] &`\`
+`sudo python [PATH TO THE SCRIPT] &`\
 
 
 
