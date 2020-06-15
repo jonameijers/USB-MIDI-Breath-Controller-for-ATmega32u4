@@ -15,7 +15,7 @@ However, since my board lacks the required usb microcontroller (16U2) to functio
 * We will use a hardware SPI implementation. This requires the SPI kernel module to be loaded by uncommenting the 'dtparam=spi=on' line in /boot/config.txt
 
 
-### To turn the Raspberry Pi Uno into a standalone USB midi controller, follow these steps: 
+### To turn the Raspberry Pi Zero into a standalone USB midi controller, follow these steps: 
 
 
 1. `echo "dwc2" | sudo tee -a /etc/modules`
