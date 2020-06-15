@@ -8,11 +8,11 @@ However, since my board lacks the required usb microcontroller (16U2) to functio
 
 ## Requirements
 
-[RPi.GPIO](https://pypi.org/project/RPi.GPIO/) and [Python-RtMidi](https://pypi.org/project/python-rtmidi/).
+* [RPi.GPIO](https://pypi.org/project/RPi.GPIO/), [Python-RtMidi](https://pypi.org/project/python-rtmidi/).
 
-Follow [this guide](https://blog.gbaman.info/?p=791) to enable the ssh-over-usb capability. 
+* Follow [this guide](https://blog.gbaman.info/?p=791) to enable the ssh-over-usb capability. 
 
-We will use a hardware SPI implementation. This requires the SPI kernel module to be loaded by uncommenting the 'dtparam=spi=on' line in /boot/config.txt
+* We will use a hardware SPI implementation. This requires the SPI kernel module to be loaded by uncommenting the 'dtparam=spi=on' line in /boot/config.txt
 
 
 ### To turn the Raspberry Pi Uno into a standalone USB midi controller, follow these steps: 
