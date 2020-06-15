@@ -8,7 +8,7 @@ However, since my board lacks the required usb microcontroller (16U2) to functio
 
 ## Requirements
 
-[RPi.GPIO](https://pypi.org/project/RPi.GPIO/)\ and [Python-RtMidi](https://pypi.org/project/python-rtmidi/)\.
+[RPi.GPIO](https://pypi.org/project/RPi.GPIO/) and [Python-RtMidi](https://pypi.org/project/python-rtmidi/).
 
 Follow [this guide](https://blog.gbaman.info/?p=791) to enable the ssh-over-usb capability. 
 
