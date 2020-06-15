@@ -54,11 +54,11 @@ and write this before "exit0", then save it:\
 
 ## Autostarting the Script at boot
 
-`sudo sudo nano /etc/rc.local`\
+`sudo sudo nano /etc/rc.local`
 
 add this line before the exit statement:
 
-`sudo python [PATH TO THE SCRIPT] &`\
+`sudo python [PATH TO THE SCRIPT] &`
 
 
 
