@@ -1,5 +1,5 @@
 
-# Arduino Pro Micro (ATmega32u4) - USB MIDI Breath Controller
+# Arduino Clone (ATmega32u4) - USB MIDI Breath Controller
 
 On the Arduino I am using a pressure sensor to get Breath Pressure readings and a potentiometer to manually set the range to callibrate to air-flow intensity. The breathing tube is split with one end connected to the sensor and the other passing air to enable breath-tru response like traditional wind instruments. 
 
