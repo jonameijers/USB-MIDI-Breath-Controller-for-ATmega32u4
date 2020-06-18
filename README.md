@@ -6,7 +6,7 @@ On the Arduino I am using a pressure sensor to get Breath Pressure readings and 
 
 ## Requirements
 
-- Arduino or equivalent with ATmega32u4 Chip (or possibly boards with the 16u2 USB microcontroller) To enable operation as a standard USB midi device out of the box.
+- Arduino or equivalent with ATmega32u4 Chip (or possibly boards with the 16u2 USB microcontroller) To enable operation as a standard USB midi device.
 
 - [MIDIUSB](https://github.com/arduino-libraries/MIDIUSB) Library 
 
