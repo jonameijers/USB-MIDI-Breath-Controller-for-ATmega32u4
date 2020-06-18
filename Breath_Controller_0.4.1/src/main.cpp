@@ -1,4 +1,3 @@
-#include <MIDIUSB_Defs.h>
 #include <MIDIUSB.h>
 
 
@@ -11,8 +10,9 @@ const int midi_channel = 0;           // Sets the midi channel, 0 == channel 1
 const int breath_controller = 2;      // Sets the midi control number
 
 int pressure_val;                     // Stores pressure reading value
+int pressure_readings [3];           // Stores the last 3 pressure readings to filter out oscillations caused 
 byte ccval;                           // Stores midi cc value to send in midi event
-bool value_change = false;            //
+bool value_change = false;
 int pot_reading;                      // Stores last potentiometer reading
 int lower;                            // Stores lower bound for pressure reading to exclude ambient pressure
 int upper;                            // Stores upper bound for pressure reaading which can be adjusted by potentiometer
@@ -38,19 +38,20 @@ void setup() {
 
 
 
-void loop() {
+void debug(String debug_string, int value) {
 
-  process_readings();
-
-  set_led_status();
-
-  if (value_change) {
-    send_midi_data();
+  if (DEBUG) {
+    Serial.print(debug_string);
+    Serial.print(" ");
+    Serial.print(value);
+    Serial.println();
   }
+}
 
-
- delay(1);        // delay 3 milliseconds to avoid hogging MIDI bandwidth or cause overflow in certain software instruments
-
+byte convert_to_midi(int reading) {
+  byte result;
+  result = constrain(map(reading, lower, upper, 0,127), 0, 127);
+  return result;
 }
 
 
@@ -76,12 +77,6 @@ void process_readings() {
   else if (new_ccval == ccval) {
     value_change = false;
   }
-}
-
-byte convert_to_midi(int reading) {
-  byte result;
-  result = constrain(map(reading, lower, upper, 0,127), 0, 127);
-  return result;
 }
 
 
@@ -135,12 +130,21 @@ void digital_denoise(int analogPin, int reading) {
 
 }
 */
-void debug(String debug_string, int value) {
 
-  if (DEBUG) {
-    Serial.print(debug_string);
-    Serial.print(" ");
-    Serial.print(value);
-    Serial.println();
+
+
+void loop() {
+
+  process_readings();
+
+  set_led_status();
+
+  if (value_change) {
+    send_midi_data();
   }
+
+
+ delay(1);        // delay 3 milliseconds to avoid hogging MIDI bandwidth or cause overflow in certain software instruments
+
 }
+
